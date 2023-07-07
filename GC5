@@ -1,0 +1,35 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package excercise;
+
+/**
+ *
+ * @author oracle
+ * Constructor overloading 
+ */
+class T1{
+    public String city, state;
+    T1()
+    {
+        
+    }
+    T1(String ename)
+    {
+        this.city = ename;
+        this.state = "KL";
+    }
+    T1(String empname, String city)
+    {
+        
+    }
+}
+public class GC5 {
+    public static void main(String[] args) {
+        T1 temp1 = new T1();
+        T1 temp2 = new T1("gujrat");
+        T1 temp3 = new T1("gujrat","maha");
+    }
+}
