@@ -1,0 +1,39 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package excercise;
+
+class Address1 {
+    String state, city;
+    public Address1(String state, String city) {
+        this.state = state;
+        this.city = city;
+        //Same Variables then we have to use this keyword
+    }
+}
+class Emp {
+    Address1 add;
+    String name;
+    public Emp(Address1 add, String name) {
+        this.name = name;
+        this.add = new Address1(add.city, add.state);
+    }
+}
+public class GC4 {
+    public static void main(String[] args) {
+        // TODO code application logic here
+        Address1 add = new Address1("guj", "dahanu");
+        Emp emp = new Emp(add, "Jash");
+        System.out.println(emp.add.city);
+        String s1 = "hi   ";
+        String s2 = "     hi      ";
+                if(s1 == s2)
+                    System.out.println("True" + s2.length());
+        System.out.println(s2.length());
+        s2 = s2.trim(); //Trim removes extra white spaces from both left and right side 
+        System.out.println(s2.length());
+        
+    }
+}
