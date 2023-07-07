@@ -1,0 +1,101 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package excercise;
+import java.util.*;
+
+/**
+ *
+ * @author oracle
+ */
+class Solver{
+    public static boolean isSafe(char[][]board, int row, int col)
+    {
+          for(int j = 0;j<board.length;j++)
+          {
+              if(board[row][j]=='Q')
+                  return false;
+          }
+          
+          
+          
+          for(int i = 0;i<board.length ;i++)
+          {
+              if(board[i][col]=='Q')
+                  return false;
+          }
+           
+          int r = row;
+          
+          for(int j = col;j>=0 && r>=0;j--,r--)
+          {
+              if(board[r][j]=='Q')
+                  return false;
+          }
+          
+           r = row;
+          for(int j = col;j>=0 && r<board.length; j--,r++)
+          {
+              if(board[r][j]=='Q')
+                  return false;
+          }
+          return true;
+    }
+    public static void saveBoard(char[][] board, List<List<String>>allBoards)
+    {
+        //System.out.println("here");
+        String row = "";
+        List<String>newBoard = new ArrayList<>();
+        for(int i=0;i<board.length;i++)
+        {
+            row="";
+            for(int j=0;j<board[0].length;j++){
+                if(board[i][j]=='Q')
+                    row+='Q';
+                else 
+                    row +='.';
+            }
+            newBoard.add(row);
+        }
+        allBoards.add(newBoard);
+        
+    }
+    public static void helper(char [][] board, List<List<String>> allBoards, int col)
+    {
+        System.out.println("here");
+        if(col == board.length)
+        {
+            saveBoard(board, allBoards);
+            return;
+        }
+        for(int row = 0; row<board.length;row++)
+        {
+            if(isSafe(board,row,col))
+            {
+                board[row][col] = 'Q';
+                helper(board, allBoards,col+1);
+                board[row][col]='.';
+            }
+        }
+    }
+}
+public class SolvingNQueen {
+    public static void main(String[] args) {
+        int n = 4;
+        List<List<String>>allBoards = new ArrayList<>();
+        char[][] board = new char[n][n];
+        Solver S =new Solver();
+        S.helper(board,allBoards,0);
+        
+         for (List<String> row : allBoards) {
+             //System.out.println("reaching here ");  
+            for (String element : row) {
+               // System.out.println("reaching here too ");
+                 System.out.println(element);
+            }
+               System.out.println();
+        }
+    }
+}
