@@ -1,0 +1,37 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package excercise;
+
+/**
+ *
+ * @author oracle
+ */
+class Address{
+    public String state, city;
+}
+
+class Employee1{
+    public Address Add;
+    public String name;
+    
+    void show()
+    {
+        System.out.println(" "+Add.state+" "+Add.city+" "+name);
+    }
+    
+}
+public class GC3 {
+    public static void main(String[] args) {
+       Employee1 e1 = new Employee1(); 
+       e1.name = "Jash";
+       Address a1 = new Address();
+       a1.state = "Maha";
+       a1.city = "dahanu";
+       e1.Add = a1;
+       
+       e1.show();
+    } 
+}
