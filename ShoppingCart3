@@ -1,0 +1,40 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package excercise;
+
+/**
+ *
+ * @author oracle
+ */
+class Item{
+    public final int itemNo;
+    private String name;
+    private String desc;
+    private double cost;
+    public Item(int tempNo, String tempName,String desc1, double cost1)
+    {
+        this.itemNo = tempNo;
+        this.name = tempName;
+        this.desc = desc1;
+        this.cost = cost1;
+    }
+    //constructor is always public 
+    public void showItem(){
+        System.out.println(itemNo);
+        System.out.println(name);
+        System.out.println(desc);
+        System.out.println(cost);
+    }
+}
+public class ShoppingCart3 {
+    public static void main(String[] args) {
+            Item i1 = new Item(1,"book","classmate",50);
+            Item i2 = new Item(2,"book","classmate",50);
+            i1.showItem();
+            //i1.itemNo = 5;
+            i2.showItem();
+    }    
+}
