@@ -1,0 +1,26 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package excercise;
+import java.time.LocalDate;
+import java.time.chrono.JapaneseDate;
+/**
+ *
+ * @author oracle
+ */
+public class GC7 {
+    public static void main(String[] args) {
+        LocalDate myDate = LocalDate.now();
+        JapaneseDate jDate = JapaneseDate.from(myDate);
+        System.out.println(myDate);
+        System.out.println(jDate);
+        
+        int x = Integer.parseInt("56"); //Convert to integer 
+        int y = Integer.valueOf("1010",10); //number and base 
+        System.out.println(x);
+        System.out.println(y);
+        
+    }
+}
