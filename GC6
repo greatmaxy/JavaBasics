@@ -1,0 +1,32 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package excercise;
+
+/**
+ *
+ * @author oracle
+ */
+
+class Box {
+    private static int width;
+    private static int height;
+    private static int depth;
+    
+    public static void setMethod(int w, int h, int d)
+    {
+        width = w;
+        height = h;
+        depth = d;
+        System.out.println("Variables are set");
+    }
+    
+}
+public class GC6 {
+    public static void main(String[] args) {
+        Box B = new Box();
+        B.setMethod(10,10,10);  
+    }
+}
